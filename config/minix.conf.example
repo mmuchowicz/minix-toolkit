@@ -1,0 +1,35 @@
+# Skopiuj ten plik do katalogu config/minix.conf i edytuj kopię:
+#   cp config/minix.conf.example config/minix.conf
+
+# Ścieżki względne są rozpoznawane względem katalogu zawierającego plik minix.sh
+# MINIX_DATA_DIR="/var/lib/minix-toolkit"
+
+# Nazwa/ścieżka do pliku wykonywalnego QEMU
+QEMU_CMD="qemu-system-i386"
+
+# Tablica z dodatkowym argumentami QEMU
+QEMU_EXTRA_ARGS=(-display curses)
+
+# Opcjonalne narzędzie używane przez "Eksportuj do pliku ZIP" w menu
+ZIP_CMD="zip"
+
+# Format daty przekazywany do polecenia `date` w celu tworzenia nazw plików kopii zapasowych i eksportu
+MINIX_DATE_FORMAT="+%Y_%m_%d_%H_%M_%S"
+
+# Wartości obrazów to nazwy plików (a nie ścieżki); są one przechowywane w katalogu MINIX_DATA_DIR
+# Katalog punktu montowania jest również tworzony w katalogu MINIX_DATA_DIR, jeśli jest podany jako ścieżka względna
+MINIX_CUR_NAME="minix203.img.cur"
+MINIX_SOURCE_IMAGE_NAME="minix203.img.ori"
+MINIX_USR_LOCAL_DIR="minix_usr"
+
+# Ustawienia montowania systemu plików MINIX
+MINIX_FILESYSTEM_TYPE="minix"
+MINIX_PARTITION_OFFSET="1483776"
+
+# Katalogi kopii zapasowych, w odniesieniu do MINIX_DATA_DIR, chyba że podano ścieżkę bezwzględną
+MINIX_BACKUP_DIR="backups"
+# Jeśli nie podano, domyślną wartością jest "$MINIX_BACKUP_DIR/auto"
+# MINIX_AUTO_BACKUP_DIR="backups/auto"
+
+# Adres URL obrazu
+MINIX_SOURCE_URL="http://www.ia.pw.edu.pl/~tkruk/edu/soi.b/lab/minix/minix203.img"
